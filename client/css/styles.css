@@ -1,0 +1,347 @@
+html, body {
+  background: #f3f3f3;
+  height: 100%;
+  width: 100%;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.h1, h1 {
+  font-size: 36px;
+}
+
+a {
+    color: red;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.break {
+  word-break: break-all;
+}
+
+/* start of loading spinner */
+.spinner-wrapper {
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 999999;
+}
+
+/* changing opacity of spinner-wrapper without
+   changing the opacity of child element*/
+.spinner-wrapper:before {
+  content: '';
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: #fff;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(359deg)
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(359deg)
+    }
+}
+
+.spinner {
+    -webkit-animation: rotation 0.6s infinite linear;
+    -o-animation: rotation 0.6s infinite linear;
+    animation: rotation 0.6s infinite linear;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.25);
+    border-left: 4px solid rgba(0, 0, 0, 0.25);
+    border-right: 4px solid rgba(0, 0, 0, 0.25);
+    border-top: 4px solid rgba(0, 0, 0, 0.75);
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    height: 32px;
+    width: 32px;
+}
+
+.spinner.spinner-inline {
+    display: inline-block;
+    margin-right: 3px;
+    vertical-align: middle
+}
+
+.spinner.spinner-lg {
+    border-width: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+/* end of loading spinner */
+
+/* start of close button */
+.close {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.close:hover::before, .close:hover::after {
+  background: #c00;
+}
+
+.close::before, .close::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  background: #000;
+}
+
+.close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.close.hairline::before, .close.hairline::after {
+  height: 1px;
+}
+/* end of close button */
+
+/* start of chart */
+.chart-legend, .bar-legend, .line-legend, .pie-legend, .radar-legend, .polararea-legend, .doughnut-legend {
+  list-style-type: none;
+  margin-top: 5px;
+  text-align: center;
+  -webkit-padding-start: 0;
+  -moz-padding-start: 0;
+  padding-left: 0
+}
+
+.chart-legend li, .bar-legend li, .line-legend li, .pie-legend li, .radar-legend li, .polararea-legend li, .doughnut-legend li {
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  padding: 2px 8px 2px 28px;
+  font-size: smaller;
+  cursor: default
+}
+
+.chart-legend li span, .bar-legend li span, .line-legend li span, .pie-legend li span, .radar-legend li span, .polararea-legend li span, .doughnut-legend li span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px
+}
+.chart {
+  display: block;
+  width: 100%;
+}
+/* end of chart */
+
+/* start of timeline */
+.cbp_tmtimeline {
+  margin: 0px;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* The line */
+.cbp_tmtimeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #646464;
+  left: 50px;
+  margin-left: -4px;
+}
+
+.pagespped-cards {
+  padding: 16px 32px;;
+}
+
+.cbp_tmtimeline li {
+  position: relative;
+}
+
+/* The date/time */
+.cbp_tmtimeline li .cbp_tmtime {
+  display: block;
+  position: absolute;
+  color: #646464;
+    left: 80px;
+    top: -4px;
+}
+
+/* right content */
+.cbp_tmtimeline li .cbp_tmlabel {
+  margin: 0 0 15px 250px;
+  background: #f3f3f3;
+  color: #646464;
+  padding: 2em;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.4;
+  position: relative;
+}
+
+.cbp_tmtimeline li .cbp_tmlabel h2 {
+  margin-top: 0px;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+/* icons */
+.cbp_tmtimeline li .cbp_tmicon {
+  position: absolute;
+  line-height: 45px;
+  left: 0px;
+  top: -13px;
+}
+
+.cbp_tmtimeline li .cbp_tmicon.red {
+  color: #cc0000;
+}
+
+.cbp_tmtimeline li .cbp_tmicon:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  line-height: 30px;
+  background: #646464;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff;
+  left: 37px;
+  top: 11px;
+}
+
+.cbp_tmtimeline li .cbp_tmicon.red:before {
+  background: #cc0000;
+}
+
+.cbp_tmtimeline li .cbp_tmicon.green:before {
+    background: #008000;
+}
+
+/* end of timeline */
+
+/* start of select field */
+select {
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 4px 0;
+  font-size: 16px;
+  color: rgba(0,0,0, 0.26);
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0, 0.12);
+  border-radius: 0px;
+}
+
+/* remove focus */
+select:focus {
+  outline: none;
+}
+
+/* hide label */
+.mdl-selectfield label {
+  display: none;
+}
+
+/* use custom arrow */
+.mdl-selectfield select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.mdl-selectfield {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  position: relative;
+}
+.mdl-selectfield:after {
+  position: absolute;
+  top: 0.75em;
+  right: 0.5em;
+  /* styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: .25em solid transparent;
+  border-right: .25em solid transparent;
+  border-top: 0.375em solid rgba(0,0,0, 0.12);
+  pointer-events: none;
+}
+/* end of select field */
+
+@media screen and (max-width: 47.2em) {
+
+    .cbp_tmtimeline li .cbp_tmlabel {
+        margin: 0px 0 80px 70px;
+    }
+
+    .cbp_tmtimeline li .cbp_tmtime {
+        top: -35px;
+    }
+
+    .cbp_tmtimeline li .cbp_tmicon {
+        top: -45px;
+    }
+
+    .cbp_tmtimeline:before {
+        margin-top: -20px;
+    }
+}

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+HOME=$OPENSHIFT_REPO_DIR
+cd "${OPENSHIFT_REPO_DIR}"
+npm install --loglevel error
+
+# If there is a grunt file, run $ gulp
+if [ -f "${OPENSHIFT_REPO_DIR}"/gulpfile.js ]; then
+    (cd "${OPENSHIFT_REPO_DIR}"; node_modules/gulp/bin/gulp.js)
+fi
+
+rm -rf client
+rm -rf lib
+
+mv dist/* .
+rm -rf dist
