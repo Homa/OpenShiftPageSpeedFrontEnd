@@ -7,7 +7,7 @@ export class MilestonesService {
     constructor(public http: Http) { }
 
     siteLists(url, strategy) {
-        return this.http.get('[YOUR-API-HOST-URL-GOES-HERE]/siteslist').map(res => res.json());
+        return this.http.get('[YOUR-API-HOST-URL-GOES-HERE]/pages').map(res => res.json());
     }
 
     load(url, strategy) {
