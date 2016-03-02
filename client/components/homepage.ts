@@ -61,6 +61,7 @@ import {PagespeedService} from '../services/pagespeed';
         .device-score {
             -webkit-flex: 1;
             flex: 1;
+            width: 50%;
         }
 
         .score {
