@@ -31,7 +31,8 @@ var PATHS = {
     'node_modules/angular2/bundles/http.dev.js',
     'node_modules/angular2/bundles/router.dev.js',
     'node_modules/chart.js/Chart.js',
-    'node_modules/lodash/lodash.js'
+    'node_modules/lodash/lodash.js',
+    'node_modules/moment/moment.js'
   ],
   client: {
     ts: ['client/**/*.ts'],
