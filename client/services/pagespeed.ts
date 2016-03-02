@@ -1,5 +1,5 @@
 import { Injectable } from 'angular2/core';
-import { Http } from 'angular2/http';
+import { Http, URLSearchParams } from 'angular2/http';
 
 @Injectable()
 export class PagespeedService {
@@ -7,7 +7,7 @@ export class PagespeedService {
 
     constructor(public http: Http) { }
 
-    siteLists(url, strategy) {
+    siteLists() {
         return this.http.get(`${this.apiUrl}/pages`).map(res => res.json());
     }
 
@@ -17,5 +17,11 @@ export class PagespeedService {
 
     getCurrentScores() {
         return this.http.get(`${this.apiUrl}/currentscore`).map(res => res.json());
+    }
+
+    getScores(url) {
+        var params = new URLSearchParams();
+        params.set('site', encodeURIComponent(url));
+        return this.http.get(`${this.apiUrl}/scores`, { search: params }).map(res => res.json());
     }
 }
