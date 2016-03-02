@@ -1,7 +1,7 @@
 import {Component, Directive} from 'angular2/core';
 import {NgIf, NgFor, NgModel} from 'angular2/common';
 import {Summary} from './summary';
-import {MilestonesService} from '../services/milestones';
+import {PagespeedService} from '../services/pagespeed';
 import {PolarAreaChart} from './polar-area-chart';
 import {CamelCaseToTextPipe} from '../pipes/CamelCaseToText.pipe';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
@@ -11,7 +11,7 @@ import {PlaceDataInPlaceholders2Pipe} from '../pipes/placeDataInPlaceholders2.pi
 
 @Component({
     selector: 'dashboard',
-    providers: [MilestonesService],
+    providers: [PagespeedService],
     pipes: [CamelCaseToTextPipe, ObjToArrSummaryPipe, PlaceDataInPlaceholdersPipe, PlaceDataInPlaceholders2Pipe],
     directives: [NgIf, NgFor, Summary, PolarAreaChart, ROUTER_DIRECTIVES],
     template: `
@@ -157,7 +157,7 @@ export class Dashboard {
     private lastMilestoneState: string;
     public lastMilestoneStateWithByteSizes: any = {};
 
-    constructor(public service: MilestonesService) {
+    constructor(public service: PagespeedService) {
         service.siteLists().subscribe(sitelists => {
             this.sitelists = sitelists;
         });
